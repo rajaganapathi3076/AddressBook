@@ -12,13 +12,13 @@ namespace AddressBook
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the AddressBook UC1");
+            Console.WriteLine("Welcome to the AddressBook UC2");
             AddressBook addressBook = new AddressBook();
 
             while (true)
             {
                 Console.WriteLine("Address Book Menu:");
-                Console.WriteLine("1.Add Contact \n2.Exit");
+                Console.WriteLine("1.Add Contact\n2.View All Contact \n3.Exit");
                 
                 Console.Write("Enter your Choice : ");
                 string Choice= Console.ReadLine();
@@ -27,28 +27,55 @@ namespace AddressBook
                 {
                     case "1":
                         Console.WriteLine("Enter Name:  ");
-                        string name= Console.ReadLine();
+                        string Name= Console.ReadLine();
                         Console.WriteLine("Enter Address:  ");
-                        string address = Console.ReadLine();
+                        string Address = Console.ReadLine();
                         Console.WriteLine("Enter City:  ");
-                        string city = Console.ReadLine();
+                        string City = Console.ReadLine();
                         Console.WriteLine("Enter State:  ");
-                        string state = Console.ReadLine();
+                        string State = Console.ReadLine();
                         Console.WriteLine("Enter Zipcode:  ");
-                        int zipcode = Convert.ToInt32 ( Console.ReadLine());
+                        int Zipcode = Convert.ToInt32 ( Console.ReadLine());
                         Console.WriteLine("Enter Phonenumber:  ");
-                        long phonenumber = Convert.ToInt64(Console.ReadLine());
+                        long Phonenumber = Convert.ToInt64(Console.ReadLine());
                         Console.WriteLine("Enter Email:  ");
-                        string email = Console.ReadLine();
+                        string Email = Console.ReadLine();
 
                         Contact newContact= new Contact();
                         {
-                            newContact.Address = address;
+                            newContact.Name = Name;
+                            newContact.Address = Address;
+                            newContact.City = City;
+                            newContact.State = State;
+                            newContact.Zipcode = Zipcode;
+                            newContact.PhoneNumber = Convert.ToInt64( Phonenumber);
+                            newContact.Email = Email;
+
                         }
                         addressBook.AddContact(newContact);
                         Console.WriteLine("Contact added successfully!");
                         break;
                     case "2":
+                        List<Contact> contacts = addressBook.GetAllContacts();
+                        if (contacts.Count > 0)
+                        {
+                            Console.WriteLine("All Contacts :");
+
+                            foreach(Contact contact in contacts)
+                            {
+                                Console.WriteLine($"Name:  {contact.Name}");
+                                Console.WriteLine($"Address :  {contact.Address}");
+                                Console.WriteLine($"City  :  {contact.City}");
+                                Console.WriteLine($"State :  {contact.State}");
+                                Console.WriteLine($"Zipcode : {contact.Zipcode}");
+                                Console.WriteLine($"Phonenumber : {contact.PhoneNumber}");
+                                Console.WriteLine($"Email :  {contact.Email}");
+
+                                Console.WriteLine();
+                            }
+                        }
+                        break;
+                    case "3":
 
                         Console.WriteLine("Exiting...");
                         Environment.Exit(0);
