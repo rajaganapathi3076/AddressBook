@@ -18,7 +18,7 @@ namespace AddressBook
             while (true)
             {
                 Console.WriteLine("Address Book Menu:");
-                Console.WriteLine("1.Add Contact\n2.View All Contact \n3.Exit");
+                Console.WriteLine("1.Add Contact\n2.View All Contact\n3.Edit Contact \n4.Exit");
                 
                 Console.Write("Enter your Choice : ");
                 string Choice= Console.ReadLine();
@@ -76,6 +76,38 @@ namespace AddressBook
                         }
                         break;
                     case "3":
+
+                        Console.WriteLine("Enter the update contact details");
+                        string contactNameToEdit=Console.ReadLine();
+                        List<Contact> allContactsToEdit = addressBook.GetAllContacts();
+                        Contact contactToEdit = allContactsToEdit.Find(c => c.Name.Equals(contactNameToEdit, StringComparison.OrdinalIgnoreCase));
+
+                        if (contactToEdit != null)
+                        {
+                            Console.WriteLine("Enter the updated contact details:  ");
+                            Console.Write("Enter contact name: ");
+                            string upadatedName=Console.ReadLine();
+                            Console.Write("Enter the Phone number:  ");
+                            long updatedPhoneNumber = Convert .ToInt64(Console.ReadLine());
+                            Console.WriteLine("Enter the City:  ");
+                            string updatedCity=Console.ReadLine();
+
+                            Contact updatedContact = new Contact();
+                            {
+                                Name = upadatedName;
+                                Phonenumber = updatedPhoneNumber;
+                                City = updatedCity;
+                            }
+                            addressBook.EditContact(contactToEdit.Name, updatedContact);
+                            Console.WriteLine("Contact updated is Successfuly");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Contact is not found!!");
+                        }
+                        
+                        break;
+                    case "4":
 
                         Console.WriteLine("Exiting...");
                         Environment.Exit(0);
