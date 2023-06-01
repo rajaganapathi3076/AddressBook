@@ -23,6 +23,10 @@ namespace AddressBook
         { 
             return contacts;
         }
+        public void RemoveContact(Contact contact) 
+        {
+            contacts.Remove(contact);
+        }
         public void EditContact(string name,Contact updateContact) 
         {
             Contact exitingContact = contacts.Find(c=> c.Name.Equals(name, StringComparison.OrdinalIgnoreCase));

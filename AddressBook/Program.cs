@@ -18,7 +18,7 @@ namespace AddressBook
             while (true)
             {
                 Console.WriteLine("Address Book Menu:");
-                Console.WriteLine("1.Add Contact\n2.View All Contact\n3.Edit Contact \n4.Exit");
+                Console.WriteLine("1.Add Contact\n2.View All Contact\n3.Edit Contact \n4.RemoveContact\n5.Exit");
                 
                 Console.Write("Enter your Choice : ");
                 string Choice= Console.ReadLine();
@@ -108,6 +108,24 @@ namespace AddressBook
                         
                         break;
                     case "4":
+                        Console.Write("Enter the name of the contact to remove: ");
+                        string contactName = Console.ReadLine();
+
+                        List<Contact> allContacts = addressBook.GetAllContacts();
+                        Contact contactToRemove = allContacts.Find(c => c.Name.Equals(contactName, StringComparison.OrdinalIgnoreCase));
+
+                        if (contactToRemove != null)
+                        {
+                            addressBook.RemoveContact(contactToRemove);
+                            Console.WriteLine("Contact removed successfully!");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Contact not found!");
+                        }
+                        break;
+                        
+                    case "5":
 
                         Console.WriteLine("Exiting...");
                         Environment.Exit(0);
