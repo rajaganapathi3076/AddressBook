@@ -13,13 +13,17 @@ namespace AddressBook
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the AddressBook UC2");
+            Dictionary<string, AddressBook> addressBooks = new Dictionary<string, AddressBook>();
             AddressBook addressBook = new AddressBook();
 
             while (true)
             {
                 Console.WriteLine("Address Book Menu:");
-                Console.WriteLine("1.Add Contact\n2.View All Contact\n3.Edit Contact \n4.RemoveContact\n5.Exit");
-                
+                Console.WriteLine("1.Add Contact");
+                Console.WriteLine("2.View All Contact");  
+                Console.WriteLine("3.Edit Contact");
+                Console.WriteLine("4.RemoveContact");
+                Console.WriteLine("5.Exit");
                 Console.Write("Enter your Choice : ");
                 string Choice= Console.ReadLine();
 
@@ -54,8 +58,7 @@ namespace AddressBook
                         }
                         addressBook.AddContact(newContact);
                         Console.WriteLine("Contact added successfully!");
-                        addressBook.AddContact1(newContact);
-                        Console.WriteLine("Contact added successfully!");
+                       
                         break;
                     case "2":
                         List<Contact> contacts = addressBook.GetAllContacts();
