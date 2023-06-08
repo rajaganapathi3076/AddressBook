@@ -19,6 +19,10 @@ namespace AddressBook
         {
             contacts.Add(contact);
         }
+        public void AddContact1(Contact contact)
+        {
+            contacts.Add(contact);
+        }
         public List<Contact> GetAllContacts() 
         { 
             return contacts;

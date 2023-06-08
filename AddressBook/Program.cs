@@ -54,6 +54,8 @@ namespace AddressBook
                         }
                         addressBook.AddContact(newContact);
                         Console.WriteLine("Contact added successfully!");
+                        addressBook.AddContact1(newContact);
+                        Console.WriteLine("Contact added successfully!");
                         break;
                     case "2":
                         List<Contact> contacts = addressBook.GetAllContacts();
