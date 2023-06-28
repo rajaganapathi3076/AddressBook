@@ -146,7 +146,8 @@ namespace AddressBook
 
 
             // }
-            Console.WriteLine("Welcome To File I/O operation UC13");
+            Console.WriteLine("Welcome To File I/O operation UC14");
+            string CsvFilePath = @"C:\Users\Raja\source\repos\AddressBook\AddressBook\Contact Data\Contactdata1.csv";
             string path = @"C:\Users\Raja\source\repos\AddressBook\AddressBook\Contact Data\Contactdata1.txt";
             List<Contact> list = new List<Contact>()
             {
@@ -157,7 +158,9 @@ namespace AddressBook
 
             };
 
-            BinaryOperation.BinaryDeSerialization(path);
+            //BinaryOperation.BinarySerialization(list,path);
+            // CsvDataOperation.CsvDataSerialize(list, CsvFilePath);
+            CsvDataOperation.CsvDataDeSerialize(CsvFilePath);
             Console.ReadLine();
         }
 
