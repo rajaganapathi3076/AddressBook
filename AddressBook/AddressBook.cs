@@ -15,10 +15,7 @@ namespace AddressBook
         {
             contacts = new List<Contact>();
         } 
-        public void AddContact(Contact contact)
-        {
-            contacts.Add(contact);
-        }
+       
         public void AddContact1(Contact contact)
         {
             contacts.Add(contact);

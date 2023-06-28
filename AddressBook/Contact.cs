@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace AddressBook
 {
-    internal class Contact
+    [Serializable]
+    public class Contact
     {
         public string Name { get; set; }
        
@@ -16,5 +17,10 @@ namespace AddressBook
         public int Zipcode { get; set; }
         public long PhoneNumber { get; set; }
         public string Email { get; set; }
+
+        public override string ToString()
+        {
+            return $"Name:{Name} Address:{Address} City:{City} State:{State} Zipcode:{Zipcode} PhoneNo:{PhoneNumber} EmailID:{Email}";
+        }
     }
 }
