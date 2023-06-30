@@ -20,7 +20,7 @@ namespace AddressBook
 
         public override string ToString()
         {
-            return $"Name:{Name} Address:{Address} City:{City} State:{State} Zipcode:{Zipcode} PhoneNo:{PhoneNumber} EmailID:{Email}";
+            return $"Name:{Name} Address:{Address} City:{City} State:{State} Zip code:{Zipcode} PhoneNo:{PhoneNumber} EmailID:{Email}";
         }
     }
 }

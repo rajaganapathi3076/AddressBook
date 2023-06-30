@@ -1,0 +1,29 @@
+[
+  {
+    "Name": "Raja",
+    "Address": "Chennai",
+    "City": "Tambaram",
+    "State": "Tamilnadu",
+    "Zipcode": 602141,
+    "PhoneNumber": 8248956325,
+    "Email": "Raja235@gmail.com"
+  },
+  {
+    "Name": "Suresh",
+    "Address": "Madurai",
+    "City": "LakshmiPuram",
+    "State": "Tamilnadu",
+    "Zipcode": 652301,
+    "PhoneNumber": 6325251452,
+    "Email": "Suresh562@gmail.com"
+  },
+  {
+    "Name": "Senthil",
+    "Address": "Tirchy",
+    "City": "Avalur",
+    "State": "Tamilnadu",
+    "Zipcode": 623014,
+    "PhoneNumber": 9632587466,
+    "Email": "Senthil895@gmail.com"
+  }
+]

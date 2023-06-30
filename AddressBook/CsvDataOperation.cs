@@ -28,7 +28,7 @@ namespace AddressBook
             }
 
         }
-        public static void CsvDataDeSerialize( string path)
+        public static List<Contact> CsvDataDeSerialize( string path)
         {
             try
             {
@@ -40,11 +40,13 @@ namespace AddressBook
                 {
                     Console.WriteLine(contact);
                 }
+                return res;
                
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                return default;
             }
 
         }
